@@ -8,3 +8,14 @@ desktop.ini
 .cache/
 node_modules/
 .claude/
+
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+FAL.AI.txt
+*.key
+*.pem
+
+# Working image scratch — keep originals + AI generation tests local only
+Taran Images/

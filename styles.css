@@ -367,6 +367,109 @@ p {
 }
 
 /* ============================================================
+   ABOUT BANNER
+   Photo-only by default. Quote/attribution rendered ONLY when
+   --about-banner-quote / --about-banner-attribution are non-empty
+   (set as inline style on the .about-banner element).
+   ============================================================ */
+.about-banner {
+  --about-banner-quote: "";
+  --about-banner-attribution: "";
+
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 21 / 9;
+  background-color: var(--ink);
+  background-image: url("assets/about-banner.jpg");
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .about-banner {
+    aspect-ratio: 16 / 9;
+  }
+}
+@media (max-width: 640px) {
+  .about-banner {
+    aspect-ratio: 16 / 9;
+    background-position: left center;
+  }
+}
+
+/* Text panel — positioned absolute over the right side of the banner.
+   Pseudo-element content is driven by the custom properties. When empty,
+   nothing renders visually. */
+.about-banner-text {
+  position: absolute;
+  right: clamp(20px, 5vw, 56px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  max-width: 36ch;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+.about-banner-quote,
+.about-banner-attribution {
+  margin: 0;
+  padding: 0;
+  color: var(--paper-muted);
+}
+.about-banner-quote::before {
+  content: var(--about-banner-quote);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.45;
+  display: block;
+}
+.about-banner-attribution::before {
+  content: var(--about-banner-attribution);
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+/* Mobile: stack — photo on top, text below the banner if present. */
+@media (max-width: 640px) {
+  .about-banner-text {
+    position: static;
+    transform: none;
+    width: auto;
+    max-width: 56ch;
+    margin: 24px var(--page-pad) 0;
+    padding: 0;
+  }
+  /* Push the banner box to render the photo, then let the text flow. */
+  .about-banner {
+    aspect-ratio: auto;
+    height: auto;
+    min-height: calc(100vw * 9 / 16);
+    display: flex;
+    flex-direction: column;
+    background-position: left top;
+    padding-bottom: 24px;
+  }
+  .about-banner::before {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ============================================================
    ABOUT
    ============================================================ */
 .about {
@@ -395,6 +498,23 @@ p {
 .about-aside h2 {
   margin-top: 24px;
   font-size: clamp(32px, 4vw, 44px);
+}
+
+/* Inline dog image inside the About prose column */
+.about-dog {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  margin: 32px 0;
+  border-radius: 2px;
+}
+@media (max-width: 720px) {
+  .about-dog {
+    max-width: 100%;
+  }
 }
 
 /* ============================================================
@@ -585,6 +705,37 @@ p {
   content: "↓";
   color: var(--sage);
 }
+.writing-card-as-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.writing-card-as-link:hover,
+.writing-card-as-link:focus-visible {
+  border-color: var(--sage-soft);
+  transform: translateY(-2px);
+}
+.writing-card-as-link:hover .writing-card-cta,
+.writing-card-as-link:focus-visible .writing-card-cta {
+  color: var(--paper);
+  gap: 12px;
+}
+.writing-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--paper-muted);
+  transition: color 160ms ease, gap 160ms ease;
+}
+.writing-card-cta::after {
+  content: "→";
+  color: var(--sage);
+  font-style: italic;
+}
 
 .writings-empty-note {
   margin-top: 48px;
@@ -620,146 +771,4 @@ p {
   gap: 22px;
 }
 .connect-item {
-  border-top: 1px solid var(--paper-hairline);
-  padding-top: 18px;
-}
-.connect-item:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-.connect-label {
-  font-size: 11px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin: 0 0 10px;
-  font-weight: 500;
-}
-.connect-value {
-  font-family: var(--font-serif);
-  font-size: clamp(22px, 2.4vw, 28px);
-  font-weight: 400;
-  line-height: 1.25;
-  margin: 0;
-  letter-spacing: -0.01em;
-  color: var(--paper);
-}
-.connect-value a {
-  border-bottom: 1px solid var(--sage-soft);
-  padding-bottom: 2px;
-  transition: border-color 160ms ease;
-}
-.connect-value a:hover,
-.connect-value a:focus-visible {
-  border-bottom-color: var(--sage);
-}
-
-.connect-attribution {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--paper-muted);
-}
-.connect-attribution strong {
-  color: var(--paper);
-  font-weight: 500;
-}
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer {
-  padding: 72px var(--page-pad) 56px;
-  background: var(--ink-deep);
-  border-top: 1px solid var(--paper-hairline);
-}
-.footer-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-}
-@media (min-width: 900px) {
-  .footer-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 64px;
-  }
-}
-
-.footer-brand-block {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.footer-mark {
-  width: 36px;
-  height: 36px;
-  color: var(--sage);
-  flex-shrink: 0;
-}
-.footer-brand {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  margin: 0 0 6px;
-  color: var(--paper);
-}
-.footer-brand em {
-  font-style: italic;
-  color: var(--sage);
-}
-.footer-tag {
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: var(--paper-faint);
-  margin: 0;
-}
-
-.footer-disclosure {
-  font-size: 12px;
-  line-height: 1.65;
-  color: var(--paper-faint);
-  max-width: 56ch;
-}
-.footer-disclosure strong {
-  color: var(--paper-muted);
-  font-weight: 500;
-}
-.footer-disclosure p {
-  margin: 0 0 12px;
-  color: var(--paper-faint);
-}
-.footer-disclosure p:last-child {
-  margin-bottom: 0;
-}
-
-.footer-meta {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--paper-faint);
-  font-weight: 500;
-}
-.footer-meta strong {
-  color: var(--paper-muted);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-}
-
-/* ============================================================
-   FINE TUNING — REDUCED MOTION + PRINT
-   ============================================================ */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0ms !important;
-    transition-duration: 0ms !important;
-  }
-}
+  border-top: 1px solid var(--pape
