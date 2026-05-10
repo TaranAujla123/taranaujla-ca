@@ -19,3 +19,6 @@ FAL.AI.txt
 
 # Working image scratch — keep originals + AI generation tests local only
 Taran Images/
+
+# Working scratch — banner candidates from regeneration runs
+outputs/
