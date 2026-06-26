@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="The longer story behind the personal site. On waking up from autopilot, the patterns underneath, and the rebuild that followed. By Taran Aujla." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Taran Aujla" />
+
+  <title>The Rebuild · Taran Aujla</title>
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Rebuild" />
+  <meta property="og:description" content="On waking up from autopilot, the patterns underneath, and the rebuild that followed." />
+  <meta property="og:url" content="https://taranaujla.ca/rebuild/" />
+  <meta property="og:site_name" content="Taran Aujla" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:image" content="https://taranaujla.ca/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Taran Aujla" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Rebuild" />
+  <meta name="twitter:description" content="On waking up from autopilot, the patterns underneath, and the rebuild that followed." />
+  <meta name="twitter:image" content="https://taranaujla.ca/assets/og.jpg" />
+
+  <link rel="canonical" href="https://taranaujla.ca/rebuild/" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@300..600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles.css?v=1.0.0" />
+
+  <style>
+    /* ============================================================
+       REBUILD PAGE · taranaujla.ca/rebuild/
+       Mirrors article-page styling from /writings/.
+       ============================================================ */
+
+    :root {
+      --article-max: 660px;
+      --article-pad: clamp(20px, 5vw, 56px);
+    }
+
+    .article-shell {
+      padding: clamp(48px, 8vh, 96px) var(--article-pad) clamp(96px, 14vh, 160px);
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .article-header {
+      max-width: var(--article-max);
+      margin: 0 auto clamp(56px, 8vh, 96px);
+    }
+
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--paper-muted);
+      margin-bottom: 56px;
+      transition: color 160ms ease, gap 180ms ease;
+    }
+    .article-back:hover { color: var(--paper); gap: 14px; }
+    .article-back::before {
+      content: "\2190";
+      color: var(--sage);
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    .article-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--sage);
+      margin: 0 0 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .article-eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--sage);
+    }
+
+    .article-title {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(36px, 5.6vw, 60px);
+      line-height: 1.08;
+      letter-spacing: -0.022em;
+      color: var(--paper);
+      margin: 0 0 32px;
+      max-width: 18ch;
+    }
+    .article-title em {
+      font-style: italic;
+      color: var(--sage);
+      font-weight: 400;
+    }
+
+    .article-subtitle {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(19px, 2vw, 22px);
+      line-height: 1.5;
+      color: var(--paper-muted);
+      margin: 0 0 40px;
+      max-width: 36ch;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--paper-hairline);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      font-weight: 500;
+    }
+
+    .article-body {
+      max-width: var(--article-max);
+      margin: 0 auto;
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(18px, 1.45vw, 20px);
+      line-height: 1.78;
+      color: var(--paper);
+    }
+
+    .article-body p {
+      margin: 0 0 1.9em;
+      color: rgba(244, 241, 234, 0.92);
+    }
+
+    .article-body p em { font-style: italic; }
+    .article-body p strong { color: var(--paper); font-weight: 500; }
+
+    /* ============== Pulled quote (Bishop-style breathing-room quote block) ============== */
+    .ghost-quote {
+      margin: 3.4em -1em;
+      padding: 2.2em 1.8em 2em;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.32;
+      color: var(--paper);
+      letter-spacing: -0.005em;
+      border-left: 2px solid var(--sage);
+      position: relative;
+      max-width: 100%;
+    }
+    .ghost-quote::before {
+      content: "\201C";
+      position: absolute;
+      top: -0.15em;
+      left: 0.3em;
+      font-family: var(--font-serif);
+      font-size: 6em;
+      line-height: 1;
+      color: var(--sage);
+      opacity: 0.13;
+      font-style: normal;
+      pointer-events: none;
+    }
+    .ghost-quote-text { position: relative; z-index: 1; display: block; }
+    .ghost-quote-attr {
+      display: block;
+      margin-top: 1.2em;
+      font-family: var(--font-sans);
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+    }
+    @media (max-width: 720px) {
+      .ghost-quote { margin-left: 0; margin-right: 0; padding-left: 1.2em; padding-right: 1.2em; }
+    }
+
+    .article-body .lede {
+      font-style: italic;
+      font-size: clamp(20px, 1.6vw, 23px);
+      line-height: 1.6;
+      color: var(--paper);
+      margin-bottom: 2em;
+    }
+
+    .article-body hr.section-break {
+      border: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--paper-hairline);
+      margin: 4em 0;
+    }
+
+    /* Section marker — quiet italic sage label that sits at the top of each section */
+    .article-body .section-marker {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(20px, 1.7vw, 23px);
+      line-height: 1.4;
+      color: var(--sage);
+      letter-spacing: -0.005em;
+      margin: 0 0 1.8em;
+      padding: 0;
+      opacity: 0.92;
+    }
+
+    /* Closing emphasis */
+    .article-body .closing-emphasis {
+      margin: 2.4em 0;
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: clamp(20px, 1.7vw, 23px);
+      line-height: 1.5;
+      color: var(--paper);
+      letter-spacing: -0.005em;
+    }
+
+    .article-signoff {
+      margin-top: 4em;
+      padding-top: 2em;
+      border-top: 1px solid var(--paper-hairline);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--paper-muted);
+      font-weight: 500;
+    }
+
+    .article-end {
+      max-width: var(--article-max);
+      margin: clamp(64px, 10vh, 120px) auto 0;
+      padding-top: 48px;
+      border-top: 1px solid var(--paper-hairline);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .article-end-mark {
+      width: 44px;
+      height: 44px;
+      color: var(--sage);
+    }
+    .article-end-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+    }
+    .article-end-actions a {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--paper-muted);
+      transition: color 160ms ease, gap 180ms ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .article-end-actions a:hover { color: var(--paper); gap: 14px; }
+    .article-end-actions a::after {
+      content: "\2192";
+      color: var(--sage);
+      font-style: italic;
+    }
+
+
+    /* ============== Rebuild inline photo (small, side-aligned) ============== */
+    .rebuild-photo {
+      margin: 2.4em auto;
+      max-width: 360px;
+      display: block;
+    }
+    .rebuild-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 2px;
+    }
+    .rebuild-photo figcaption {
+      margin-top: 14px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      font-weight: 500;
+      text-align: center;
+    }
+    @media (max-width: 720px) {
+      .rebuild-photo {
+        max-width: 100%;
+      }
+    }
+
+    /* ============== Rebuild composite photo (before/after) ============== */
+    .rebuild-composite {
+      margin: 3.2em auto 2.4em;
+      max-width: 300px;
+      display: block;
+    }
+    .rebuild-composite img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 2px;
+    }
+    .rebuild-composite figcaption {
+      margin-top: 16px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      font-weight: 500;
+      text-align: center;
+    }
+    @media (max-width: 720px) {
+      .rebuild-composite {
+        max-width: 100%;
+      }
+    }
+
+    /* SLIDESHOW · then/now photo sequence */
+    .slideshow-heading {
+      margin: 4em auto 18px;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+    }
+    .rebuild-slideshow {
+      margin: 0 auto 2.4em;
+      max-width: 360px;
+      position: relative;
+      display: block;
+    }
+    .slideshow-track {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: #0f0f10;
+      border-radius: 2px;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 480ms ease;
+      pointer-events: none;
+    }
+    .slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .slide.is-full img {
+      object-fit: contain;
+      object-position: center;
+      background: #0f0f10;
+    }
+    .slide.is-composite { background: #0f0f10; }
+    .slide-pair {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      background: #0f0f10;
+    }
+    .slide-pair img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      background: #0f0f10;
+    }
+    .slide-caption {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--paper);
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+      text-align: center;
+    }
+    .slide-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(20, 20, 22, 0.6);
+      border: 1px solid rgba(244, 241, 234, 0.25);
+      color: var(--paper);
+      font-size: 22px;
+      line-height: 1;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 160ms ease, border-color 160ms ease;
+      font-family: var(--font-serif);
+      z-index: 3;
+      padding: 0;
+    }
+    .slide-nav:hover {
+      background: rgba(20, 20, 22, 0.92);
+      border-color: var(--sage);
+    }
+    .slide-nav-prev { left: 10px; }
+    .slide-nav-next { right: 10px; }
+    .slide-dots {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .slide-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(244, 241, 234, 0.22);
+      border: 0;
+      cursor: pointer;
+      padding: 0;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+    .slide-dot:hover { transform: scale(1.25); }
+    .slide-dot.is-active { background: var(--sage); }
+    @media (max-width: 720px) {
+      .rebuild-slideshow { max-width: 100%; }
+    }
+
+    /* ============== Inline image (right-floated, text wraps around) ============== */
+    .rebuild-inline-image {
+      float: right;
+      max-width: 280px;
+      margin: 0.4em 0 1em 1.8em;
+      padding: 0;
+      shape-outside: margin-box;
+    }
+    .rebuild-inline-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 2px;
+      cursor: zoom-in;
+      transition: opacity 160ms ease;
+    }
+    .rebuild-inline-image img:hover { opacity: 0.88; }
+
+    /* ============== Image lightbox (click to expand) ============== */
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(14, 12, 10, 0.96);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 5vh 5vw;
+      cursor: zoom-out;
+      animation: lightboxFade 200ms ease;
+    }
+    .image-lightbox.is-open { display: flex; }
+    .image-lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      display: block;
+      cursor: default;
+      border-radius: 2px;
+    }
+    .image-lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: transparent;
+      border: 1px solid rgba(244, 241, 234, 0.3);
+      color: var(--paper);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
+      font-family: var(--font-serif);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 160ms ease, border-color 160ms ease;
+      padding: 0;
+    }
+    .image-lightbox-close:hover {
+      background: rgba(244, 241, 234, 0.08);
+      border-color: var(--sage);
+    }
+    .image-lightbox-hint {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--paper-muted);
+      pointer-events: none;
+    }
+    @keyframes lightboxFade { from { opacity: 0; } to { opacity: 1; } }
+    .rebuild-inline-image figcaption {
+      margin: 12px 0 0;
+      font-family: var(--font-sans);
+      font-style: normal;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 1.5;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--paper-muted);
+      text-align: left;
+    }
+    .rebuild-inline-image figcaption em {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.45;
+      letter-spacing: -0.005em;
+      text-transform: none;
+      color: var(--paper-muted);
+    }
+    /* Top-of-section variant · smaller, tighter to the eyebrow */
+    .rebuild-inline-image--top {
+      max-width: 240px;
+      margin: 0 0 0.8em 1.8em;
+    }
+
+    /* ============== Comparison grid · medical data side by side ============== */
+    .rebuild-comparison {
+      margin: 2em 0 1.6em;
+      border-top: 1px solid var(--paper-hairline);
+      border-bottom: 1px solid var(--paper-hairline);
+    }
+    .rebuild-comparison-header {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1.4fr;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--paper-hairline);
+      align-items: center;
+    }
+    .rebuild-comparison-header .then-label,
+    .rebuild-comparison-header .now-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin: 0;
+    }
+    .rebuild-comparison-header .then-label { color: var(--paper-muted); }
+    .rebuild-comparison-header .now-label { color: var(--sage); }
+
+    .rebuild-comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1.4fr;
+      gap: 24px;
+      padding: 22px 0;
+      align-items: baseline;
+      border-bottom: 1px solid rgba(244, 241, 234, 0.05);
+    }
+    .rebuild-comparison-row:last-child { border-bottom: 0; }
+    .rebuild-comparison-row .metric {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--sage);
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      margin: 0;
+      justify-self: start;
+      align-self: center;
+      display: block;
+      line-height: 1.3;
+    }
+    .rebuild-comparison-row .then,
+    .rebuild-comparison-row .now {
+      font-family: var(--font-serif);
+      font-size: clamp(18px, 1.5vw, 21px);
+      line-height: 1.4;
+      margin: 0;
+    }
+    .rebuild-comparison-row .then {
+      color: rgba(244, 241, 234, 0.55);
+      font-weight: 300;
+    }
+    .rebuild-comparison-row .now {
+      color: var(--paper);
+      font-weight: 400;
+    }
+    .rebuild-comparison-row .now strong {
+      color: var(--sage);
+      font-weight: 500;
+    }
+    .rebuild-comparison-row .annotation {
+      display: block;
+      margin-top: 6px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--paper-muted);
+      font-weight: 300;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 720px) {
+      .rebuild-comparison-header,
+      .rebuild-comparison-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .rebuild-comparison-header .metric-label-placeholder {
+        display: none;
+      }
+      .rebuild-comparison-row .metric {
+        grid-column: 1 / -1;
+        margin-bottom: 4px;
+      }
+    }
+    @media (max-width: 720px) {
+      .rebuild-inline-image {
+        float: none;
+        max-width: 100%;
+        margin: 2em 0;
+      }
+      .rebuild-inline-image--top {
+        max-width: 100%;
+        margin: 0 0 2em;
+      }
+    }
+
+    /* ============== Rebuild hero · the numbers, before and after ============== */
+    .rebuild-numbers {
+      margin: 0 0 4.4em;
+      padding: 0 0 0.4em;
+    }
+    .rebuild-numbers-eyebrow {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(18px, 1.55vw, 21px);
+      line-height: 1.55;
+      color: var(--paper-muted);
+      margin: 0 0 2.6em;
+    }
+    .rebuild-numbers-block {
+      margin: 0 0 2.6em;
+    }
+    .rebuild-numbers-date {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin: 0 0 1.8em;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .rebuild-numbers-date::before {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--sage);
+    }
+    .rebuild-numbers-intro {
+      margin: 0 0 1.6em;
+      color: rgba(244, 241, 234, 0.92);
+    }
+    .rebuild-numbers-list {
+      margin: 1.4em 0 1.4em;
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(18px, 1.45vw, 20px);
+      line-height: 1.8;
+      color: rgba(244, 241, 234, 0.96);
+    }
+    .rebuild-numbers-list p {
+      margin: 0 0 0.55em;
+      color: rgba(244, 241, 234, 0.96);
+    }
+    .rebuild-numbers-list p:last-child { margin-bottom: 0; }
+    .rebuild-numbers-coda {
+      margin: 1.6em 0 0;
+      color: rgba(244, 241, 234, 0.92);
+    }
+    .rebuild-numbers-coda.is-emphasis {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(19px, 1.55vw, 22px);
+      line-height: 1.55;
+      color: var(--paper);
+      margin-top: 1.4em;
+    }
+    .rebuild-numbers-divider {
+      border: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--sage);
+      opacity: 0.32;
+      margin: 2.8em 0;
+    }
+    .rebuild-numbers-bridge {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(19px, 1.55vw, 22px);
+      line-height: 1.6;
+      color: var(--paper);
+      margin: 2.6em 0 0;
+      padding-top: 2em;
+      border-top: 1px solid var(--paper-hairline);
+    }
+
+  </style>
+</head>
+<body>
+
+  <a href="../index.html#about" class="skip-link">Skip to main content</a>
+
+  <!-- ============================== TOP BAR ============================== -->
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <a href="../index.html" class="brand" aria-label="Taran Aujla · home">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter" aria-hidden="true">
+          <path d="M 14 16 L 50 16" />
+          <path d="M 25 16 L 25 48" />
+          <path d="M 32 16 L 32 50" />
+          <path d="M 39 16 L 39 48" />
+        </svg>
+        <span class="brand-wordmark">Taran <em>Aujla</em></span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="index.html" aria-current="page">The Rebuild</a></li>
+          <li><a href="../index.html#off-curriculum">Off-Curriculum</a></li>
+          <li><a href="../reading/index.html">Reading</a></li>
+          <li class="nav-hide-sm"><a href="../index.html#connect">Connect</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="article-shell">
+
+      <!-- ============== Header ============== -->
+      <header class="article-header">
+        <a href="../index.html#about" class="article-back">Back to about</a>
+
+        <p class="article-eyebrow">The longer story</p>
+
+        <h1 class="article-title">The <em>Rebuild.</em></h1>
+
+        <p class="article-subtitle">
+          On waking up from autopilot, the patterns underneath, and the rebuild that followed.
+        </p>
+
+        <div class="article-meta">
+          <span>~7 min read</span>
+        </div>
+      </header>
+
+      <!-- ============== Body ============== -->
+      <div class="article-body">
+
+        <!-- ============== The rebuild, in numbers (hero block) ============== -->
+        <section class="rebuild-numbers" aria-label="The rebuild, in numbers">
+          <figure class="rebuild-inline-image rebuild-inline-image--top" aria-label="Before and after, January 2025 to May 2026">
+            <img src="../assets/rebuild/before-after-taran.jpg" alt="Taran before the rebuild and after, about 18 months apart" loading="eager" />
+            <figcaption>
+              Jan 2025 &ndash; May 2026
+              <em>And yes, it&rsquo;s the same person. About 1.5 years apart.</em>
+            </figcaption>
+          </figure>
+          <p class="rebuild-numbers-eyebrow">Where I was. Where I am.</p>
+
+          <p class="rebuild-numbers-intro">For years, I had been performing at full capacity on the only script I knew. Work, goals, ambition, milestones, the relationships, the appearance of holding things together. From the outside, the trajectory looked normal. Inside, despite getting most of what the script told me to chase, a quiet void had been there the whole time. The race I was running was not mine. I had just never stopped long enough to ask.</p>
+
+          <p class="rebuild-numbers-intro">The body was the first place that started showing what that script had cost. Side by side, the numbers tell the story.</p>
+
+          <div class="rebuild-comparison" role="table" aria-label="Medical numbers, January 2025 compared to Spring 2026">
+            <header class="rebuild-comparison-header" role="row">
+              <span class="metric-label-placeholder" aria-hidden="true"></span>
+              <p class="then-label" role="columnheader">January 2025</p>
+              <p class="now-label" role="columnheader">Spring 2026</p>
+            </header>
+
+            <div class="rebuild-comparison-row" role="row">
+              <p class="metric" role="rowheader">Weight</p>
+              <p class="then">221 lbs<span class="annotation">BMI 35 &middot; clinically obese</span></p>
+              <p class="now"><strong>150 lbs</strong><span class="annotation">Normal weight</span></p>
+            </div>
+
+            <div class="rebuild-comparison-row" role="row">
+              <p class="metric" role="rowheader">Liver</p>
+              <p class="then">Stage 4 fibrosis<span class="annotation">Last stage before failure</span></p>
+              <p class="now"><strong>Stage 0</strong><span class="annotation">Completely reversed, healed</span></p>
+            </div>
+
+            <div class="rebuild-comparison-row" role="row">
+              <p class="metric" role="rowheader">GGT</p>
+              <p class="then">1,285<span class="annotation">21&times; the upper limit</span></p>
+              <p class="now"><strong>23</strong><span class="annotation">Deep normal</span></p>
+            </div>
+
+            <div class="rebuild-comparison-row" role="row">
+              <p class="metric" role="rowheader">Cholesterol</p>
+              <p class="then">10.14</p>
+              <p class="now"><strong>4.65</strong></p>
+            </div>
+
+            <div class="rebuild-comparison-row" role="row">
+              <p class="metric" role="rowheader">Triglycerides</p>
+              <p class="then">4.23</p>
+              <p class="now"><strong>0.74</strong></p>
+            </div>
+
+            <div class="rebuild-comparison-row" role="row">
+              <p class="metric" role="rowheader">Blood Pressure</p>
+              <p class="then">160 / 100</p>
+              <p class="now"><strong>134 / 77</strong></p>
+            </div>
+
+            <div class="rebuild-comparison-row" role="row">
+              <p class="metric" role="rowheader">Medications</p>
+              <p class="then">Five daily<span class="annotation">For accumulating metabolic damage</span></p>
+              <p class="now"><strong>Zero</strong><span class="annotation">Confirmed by physician</span></p>
+            </div>
+          </div>
+
+          <p class="rebuild-numbers-coda">If you don&rsquo;t believe these numbers, I have the medical records to prove it. Connect directly with me.</p>
+
+          <p class="rebuild-numbers-bridge">The body did not change first. The mind did. The page below is what actually changed, and how.</p>
+        </section>
+
+        <p class="lede">A rebuild doesn't begin with a decision. It begins with a recognition. Sometimes it arrives the hard way... a situation serious enough that we finally say, I can't keep doing this. Sometimes it arrives quietly... the slow awareness that no matter what we achieve, something still feels off. Recognition comes first. The decision is the second step, for those who choose it.</p>
+
+        <p class="section-marker">The pressure underneath</p>
+
+        <p>Here is the difficult part for men who are used to pressure. We can keep moving long after something underneath us is telling us the way we are living is no longer working. The pattern looks like discipline from the outside, and feels like discipline from the inside. Underneath, it is the absence of attention to what the discipline is costing.</p>
+
+        <p>I did not quit, I did not check out, I did not hand the responsibility to anyone else. I kept the work moving and kept the obligations. I performed at the level the situation required, and sometimes more than it required. The mind and the body had been trained for that kind of pressure for years, and they did what they had been trained to do. They absorbed the load and kept moving.</p>
+
+        <p>What I had not yet learned is that some pressure cannot be outworked. The next milestone does not fix it. The willpower that handled every smaller version of the problem stops working at scale. The strategy I had been running for a decade was: keep going. The strategy was no longer working.</p>
+
+        <hr class="section-break" />
+
+        <p class="section-marker">What the body was saying</p>
+
+        <figure class="rebuild-inline-image" aria-label="Medical data documenting the rebuild">
+          <img src="../assets/rebuild/medical-stats.jpg" alt="Lab reports and medication list documenting the rebuild" loading="lazy" />
+          <figcaption>
+            Jan 2025 &ndash; Sept 2025
+            <em>The body kept the receipts.</em>
+          </figcaption>
+        </figure>
+
+        <p>The numbers above did not arrive as a surprise. The body had been keeping track the whole time. It had been sending warnings I had been overriding. Doctors had been warning me, and I had stopped listening to most of them. That was not weakness. It is what happens when a man has been pushing through warning signals for so long that the ability to hear them at all has gone quiet.</p>
+
+        <p>We cannot fix a problem we cannot see, and we cannot see what we are inside of.</p>
+
+        <hr class="section-break" />
+
+        <p class="section-marker">The Choice Point</p>
+
+        <p>A point came where a choice had to be made. Keep forcing my way forward and pretend the strategy that had carried me here still worked, or step back, regroup, and rebuild from the ground up.</p>
+
+        <p>Two paths. One was the way that had brought me this far. The other was uncharted ground...an admission that the runway had run out.</p>
+
+        <p>I made the call.</p>
+
+        <p>I called a hard reset. The reset was not surrender but the move you make when the current line has stopped working, so you can consolidate, repair, and come back from a stronger position. In any real military tradition, retreat in that sense is not failure. Sun Tzu wrote about it, and so did Marcus in the field, in his notebook to himself.</p>
+
+        <blockquote class="ghost-quote">
+          <span class="ghost-quote-text">The impediment to action advances action. What stands in the way becomes the way.</span>
+          <span class="ghost-quote-attr">Marcus Aurelius &middot; Meditations &middot; c. AD 170</span>
+        </blockquote>
+
+        <p>That sentence is not a Hallmark card but a working principle.</p>
+
+        <p>I stepped back from the noise. The pace, the pressure, the opinions, the constant input that had been the background of my life for years. I gave myself the temporary silence the rebuild required.</p>
+
+        <p>In that silence, what had been running me became visible: the habits I had stopped questioning, the reactions firing automatically, the crowd I had been following without ever asking where it was going, the script I had been running without ever checking who wrote it. The work was not easy, but for the first time it had a direction.</p>
+
+        <hr class="section-break" />
+
+        <p class="section-marker">What was actually mine</p>
+
+        <p>There was a second realization underneath the first.</p>
+
+        <p>For years I had been investing too much in things outside of me. Career, status, income, the visible markers I had chased and, for a time, chased well. When they started to shift, I learned something I should have known all along. We can lose those things as fast as we build them. They were never as solid as they looked, and they were on loan the whole time.</p>
+
+        <p>So I asked the question. If the externals can vanish, what actually belongs to me?</p>
+
+        <p>The answer was short. Just two things: my mind and my body. These two had been mine the entire time. Everything outside me could be taken, but these could not. Whatever my age, whatever my condition, I am the one who decides what to do with them.</p>
+
+        <p>That is where I rebuilt from.</p>
+
+        <hr class="section-break" />
+
+        <p class="section-marker">Mind first</p>
+
+        <p>The path forward was not going to be management of the situation, or accommodation of it, or making peace with what had happened and carrying on regardless. The path forward was a complete rebuild from the foundation. Mind first. The rest follows.</p>
+
+        <p>We cannot become a new self while still anchored to the old one. The work begins with subtraction.</p>
+
+        <p>The subtraction is real. We have to remove the noise around us: the opinions, the advice, the constant input from every direction. More importantly, we have to be willing to drop the beliefs and assumptions we have been running on for years: the frameworks we did not choose, the stories about ourselves that are not really ours, the things we &ldquo;know.&rdquo; If something in our life feels off, the beliefs we have been running on are not going to be the ones that get us out of it. If they were, nothing would feel off in the first place.</p>
+
+        <blockquote class="ghost-quote">
+          <span class="ghost-quote-text">You cannot solve a problem with the same thinking that created it.</span>
+          <span class="ghost-quote-attr">Principle</span>
+        </blockquote>
+
+        <p>The mental rebuild went deep. I read everything I could find on how the mind works: the neuroscience, the cognitive frameworks, the contemplative traditions that had been pointing at the same thing for two thousand years. I sat in silence regularly, in the unromantic sense of just sitting still. I observed my own thinking the way we observe weather. Not identifying with it, just watching it pass. I learned to recognize patterns the moment they started to fire, so I could choose differently before the pattern completed itself. The voice that had been running my life turned out not to be me but a script I had inherited and never examined. Once I could see it, I could change it.</p>
+
+        <p>The mental work was the work, and changing the mind was the only thing actually required.</p>
+
+        <p>This is not original. The Stoics named all of it two millennia ago. The contemplative traditions named it long before that. Most of us dismiss this kind of writing as soft, read it, claim to apply it, post it on social media, and never do the work. What is new each time is the man who reads it and lives it.</p>
+
+        <hr class="section-break" />
+
+        <p class="section-marker">Emotion out</p>
+
+        <p>I made one more move during the rebuild that made the daily execution possible. I took emotion out of the equation.</p>
+
+        <p>This is not numbness but the deliberate decision to stop letting how I felt about anything drive what I did about it. The Stoics had a name for this, though they did not call it robot mode. They called it operating with reason in command and emotion as information. The Bhagavad Gita points at the same thing in different language: action without attachment to the fruits of action.</p>
+
+        <p>What it looked like in practice was simple. I made the calls, kept the appointments, did the workouts, ate what I had decided to eat, regardless of whether I felt like it. Most days, I did not feel like it. That stopped being relevant. The body and the mind do not need our cooperation in order to do what we have already decided to do.</p>
+
+        <p>I operated like a tool, executing on what the situation required. I was not suppressing anything. The part of me that wanted to negotiate with the work had been outvoted by the part that knew what had to happen.</p>
+
+        <hr class="section-break" />
+
+        <p class="section-marker">Acting as him</p>
+
+        <p>Here is the move most people do not make.</p>
+
+        <p>We can do all the inside work: the reading, the sitting still, watching ourselves think. But there is a moment in the rebuild where the work stops being preparation and starts being identity. That moment does not happen because we feel ready. It happens because we decide.</p>
+
+        <p>I made the decision. The fit, healthy, sharp version of me would be the version I acted from, starting now. I acted as him before I felt like him, before I looked like him, before any of the proof had shown up.</p>
+
+        <p>That is the move most men miss. They are waiting until they feel like the version of themselves they want to become. The version they are waiting on does not exist yet, and will not exist until they start acting as if it does. The man is built by the acting. He does not show up first.</p>
+
+        <p>I stopped checking the scale. I stopped going around the hard parts and started walking through them. I gave myself a system, complied with it, and let the proof show up on its own time.</p>
+
+        <hr class="section-break" />
+
+        <p class="section-marker">The version that came back</p>
+
+        <p>The version of me that came out of that rebuild lives differently than the one that called the reset.</p>
+
+        <p>I lost seventy pounds in under a year. I came off the medications, one by one, with my doctors&rsquo; confirmation. The blood markers and overall health normalized across the board. None of it happened on a single decision. It happened on a thousand small ones, taken every day, in the cold of morning and the weight of evening, when I felt like it and when I did not. I built the kind of physical and mental baseline I had not had in twenty years, and probably had never had in the way I have it now.</p>
+
+        <p>None of that came from becoming a fitness obsessive. I am not a man who counts calories, lives in the gym, or runs his life around a strict diet. That was never the point.</p>
+
+        <p>What moved things was quieter. I cleared the noise. I subtracted the stressors I was carrying that did not need to be there. I made decisions that lined up with where I was trying to go, and acted on them deliberately, not frantically. No chasing the next thing, no competing with anyone, no measuring myself against people running a different race. Just steady, paced, daily action, and a mind kept under control instead of left to wander wherever it wanted. The body followed the mind. It usually does.</p>
+
+        <blockquote class="ghost-quote">
+          <span class="ghost-quote-text">Who you become is built in the days, one at a time. Stay focused. Quiet the noise. Move with intention.</span>
+          <span class="ghost-quote-attr">Principle</span>
+        </blockquote>
+
+        <p>The pressure is still there. That will not change, and the Stoics would be the first to call it out if I claimed otherwise. What is different now is how it gets met. I can recognize the pattern when it starts. I can let it pass without acting on it. I can act from clarity instead of from urgency. The difference between those two modes, once we have lived in both, is not subtle. It is the difference between a man who is being lived by his life and a man who is living it.</p>
+
+        <p>The work is sharper now, the judgment is steadier, and the grip on outcomes has loosened. I take daily action that lines up with where I am going. I do the work for the work, and I let the results land where they land. In real estate, where stakes are high and emotions tend to run the room, that is not a small thing. The way I show up now is built for the long game, with the patience for results that build over time rather than results that arrive on Monday. It stays steady on what I can control, and stays ready for the next round of pressure when it comes.</p>
+
+        <p>Outside of the practice, I keep returning to the mind: how it works, how it produces what it produces, how it runs a life until we notice it running, how everything else (the body, the work, the relationships, the trajectory) flows downstream of it. That study is now a daily practice.</p>
+
+        <p>I train, I run, I learn. I question things and take nothing on face value. I read old books, and I sit still. The training is part of how I live now, maintenance more than mission, and it was never the thing that got me here. The mind set the direction first, and the right choices followed from that, this one among them. I have two dogs of my own, and I volunteer with shelters. They have shown me what loyalty, compassion, and being real look like.</p>
+
+        <hr class="section-break" />
+
+        <p class="section-marker">Why I am writing this down</p>
+
+        <p>The reason I am writing this down is not to tell anyone what to do.</p>
+
+        <p>There is no shortage of people on the internet ready to tell us how they turned their life around and how we could do the same if we would just buy what they are selling. I am not selling anything here.</p>
+
+        <p>I am writing this down because there are men who look fine from the outside and know privately that something is off. They are still performing, still providing, still showing up. They are also tired, reactive, and running on pressure while calling it discipline. From the outside, the trajectory still looks plausible. Inside, the man knows.</p>
+
+        <p>I understand that man because I was him.</p>
+
+        <p>The person I was when I was deep in that stretch could not have read a story like this from a stranger and believed it was possible. He had heard a hundred versions of the same advice, and they had all bounced off. What he would have needed to read, if anyone had been able to write it for him, was this. The people who get to the other side of a stretch like that are not the ones who finally found the right technique. They are the ones who, having been tested past what felt manageable, made the call to reset, restart, rebuild, and re-engage from a stronger position.</p>
+
+        <p>If your life feels like chaos right now, if you have been 

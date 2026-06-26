@@ -4,17 +4,103 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap-0.9 http://www.sitemaps.org/schemas/sitemap-0.9/sitemap.xsd">
   <url>
     <loc>https://taranaujla.ca/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://taranaujla.ca/writings/the-thought-is-not-the-truth.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://taranaujla.ca/rebuild/</loc>
+    <lastmod>2026-05-14</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://taranaujla.ca/writings/the-thought-is-not-the-truth.pdf</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://taranaujla.ca/reading/</loc>
+    <lastmod>2026-05-17</lastmod>
     <priority>0.7</priority>
   </url>
-</urlset>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/watch-your-thoughts.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/the-script-we-were-handed.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/dont-death-grip-the-outcome.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/one-day-at-a-time.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/playing-not-to-lose.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/everyone-is-fighting-their-own-battle.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/negative-visualization.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/the-way-that-doesnt-force.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/adversity-is-the-training.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/the-art-of-assent.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/hedonic-treadmill.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/the-impermanence-of-things.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/platos-cave.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/after-the-cave.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/what-marcus-told-himself-every-morning.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/the-night-sea-journey.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taranaujla.ca/off-curriculum/being-carried.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+  

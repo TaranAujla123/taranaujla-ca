@@ -17,8 +17,35 @@ FAL.AI.txt
 *.key
 *.pem
 
-# Working image scratch — keep originals + AI generation tests local only
+# Working image scratch
 Taran Images/
 
 # Working scratch — banner candidates from regeneration runs
 outputs/
+
+# Working drafts (prose iteration before going live)
+drafts/
+
+# ===== PRIVATE — never publish to the public site or repo =====
+memory/
+REAL ESTATE/
+FOR INSTAGRAM/
+Med reports.jpg
+Medical stats.jpg
+STRATEGIC-DIRECTION_May-2026.md
+
+# Internal working files (not part of the public site)
+social/
+source/
+
+# Archived old versions (for revert reference, not for publish)
+archive/
+
+# Book project (private working manuscript, not for public site)
+/book/
+
+# ALFA project (separate brand, not part of taranaujla.ca)
+/ALFA REBUILD PDFs/
+
+# Source Word documents (working drafts only — HTML is the published)
+*.docx
