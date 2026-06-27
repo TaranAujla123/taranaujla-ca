@@ -44,8 +44,11 @@ archive/
 # Book project (private working manuscript, not for public site)
 /book/
 
+# Personal study and reference materials (private, not for public site)
+/personal/
+
 # ALFA project (separate brand, not part of taranaujla.ca)
 /ALFA REBUILD PDFs/
 
-# Source Word documents (working drafts only — HTML is the published)
+# Source Word documents (working drafts only — HTML is the published version)
 *.docx
