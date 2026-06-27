@@ -108,7 +108,11 @@
         </svg>
         <span class="brand-wordmark">Taran <em>Aujla</em></span>
       </a>
-      <nav aria-label="Primary">
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../rebuild/index.html">The Rebuild</a></li>
@@ -262,6 +266,8 @@
   </script>
 
   <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+
+  <script defer src="../assets/nav.js"></script>
 
 </body>
 </html>

@@ -175,16 +175,86 @@ img {
   transform: scaleX(1);
 }
 
+/* ============================================================
+   MOBILE NAV (hamburger + slide-in panel, ≤720px)
+   ============================================================ */
+.nav-toggle { display: none; }
+
 @media (max-width: 720px) {
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 11px 10px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 110;
+    position: relative;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--paper);
+    transition: transform 220ms ease, opacity 200ms ease;
+    transform-origin: center;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* Slide-in panel */
+  nav[aria-label="Primary"] {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    width: min(80vw, 320px);
+    background: var(--ink);
+    border-left: 1px solid var(--paper-hairline);
+    padding: 88px 28px 28px;
+    transform: translateX(100%);
+    transition: transform 280ms cubic-bezier(.22,.61,.36,1);
+    z-index: 95;
+    overflow-y: auto;
+  }
+  nav[aria-label="Primary"].is-open {
+    transform: translateX(0);
+  }
   .nav-list {
-    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
   }
   .nav-list a {
-    font-size: 11px;
-    letter-spacing: 0.1em;
+    font-size: 15px;
+    letter-spacing: 0.04em;
   }
   .nav-list .nav-hide-sm {
-    display: none;
+    display: list-item;
+  }
+
+  /* Backdrop + body scroll lock when panel open */
+  body.nav-is-open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 85;
+  }
+  body.nav-is-open {
+    overflow: hidden;
   }
 }
 

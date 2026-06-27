@@ -81,7 +81,11 @@
         <span class="brand-wordmark">Taran <em>Aujla</em></span>
       </a>
 
-      <nav aria-label="Primary">
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="#about">About</a></li>
           <li><a href="rebuild/index.html">The Rebuild</a></li>
@@ -594,6 +598,7 @@
   <!-- Kit (ConvertKit) form script for the Starter Collection subscribe form -->
   <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 
-  <!-- Formspree Ajax — keeps the user on this page after submission, shows inline success/error -->
-  <script>
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(argument
+  <script defer src="assets/nav.js"></script>
+
+</body>
+</html>
