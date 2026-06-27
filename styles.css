@@ -1467,3 +1467,101 @@ footer[role="contentinfo"] {
     width: 100% !important;
   }
 }
+
+/* ============================================================
+   MailerLite embed: restyle to match dark/sage/Newsreader
+   Targets MailerLite's stable embed classes. !important is
+   required because MailerLite injects inline styles + an
+   @import for its own font stack.
+   ============================================================ */
+
+.ml-embedded .ml-form-embedBody,
+.ml-embedded .ml-form-embedBody.ml-form-embedBodyDefault,
+.ml-embedded .ml-form-successBody {
+  background: var(--ink-elevated) !important;
+  border: 1px solid var(--paper-hairline) !important;
+  border-radius: 6px !important;
+  padding: clamp(32px, 5vw, 48px) clamp(28px, 4vw, 40px) !important;
+  font-family: var(--font-sans) !important;
+  color: var(--paper) !important;
+  box-shadow: none !important;
+}
+
+.ml-embedded .ml-form-embedContent h4,
+.ml-embedded .ml-form-successContent h4 {
+  font-family: var(--font-serif) !important;
+  font-weight: 400 !important;
+  font-size: clamp(26px, 3vw, 34px) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.015em !important;
+  color: var(--paper) !important;
+  margin: 0 0 14px !important;
+}
+
+.ml-embedded .ml-form-embedContent p,
+.ml-embedded .ml-form-embedBody p,
+.ml-embedded .ml-form-successContent p {
+  font-family: var(--font-sans) !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: var(--paper-muted) !important;
+  margin: 0 0 22px !important;
+}
+
+/* Input + button — must match MailerLite's ID-prefixed specificity.
+   #mlb2-43117860 is the container ID of our specific form (8pN0KV
+   on account 2474505). If a new form is added, add its ID here too. */
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input[type="email"],
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input.form-control {
+  background-color: var(--ink) !important;
+  color: var(--paper) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 15px !important;
+  border: 1px solid var(--paper-hairline) !important;
+  border-radius: 4px !important;
+  padding: 14px 16px !important;
+  height: auto !important;
+  box-shadow: none !important;
+  transition: border-color 160ms ease;
+}
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder,
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input::placeholder {
+  color: var(--paper-faint) !important;
+}
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input:focus {
+  border-color: var(--sage) !important;
+  outline: none !important;
+}
+
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button,
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.primary {
+  background-color: var(--sage) !important;
+  color: var(--ink) !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.04em !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 16px 24px !important;
+  height: auto !important;
+  width: 100% !important;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover,
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.primary:hover {
+  background-color: var(--paper) !important;
+  transform: translateY(-1px);
+}
+.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading {
+  background-color: var(--paper-hairline) !important;
+  color: var(--paper-muted) !important;
+}
+
+.ml-embedded .ml-form-embedContainer,
+.ml-embedded .ml-form-embedWrapper {
+  background: transparent !important;
+  max-width: none !important;
+}
