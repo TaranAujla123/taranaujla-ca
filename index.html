@@ -34,6 +34,16 @@
 
   <link rel="stylesheet" href="styles.css?v=1.0.0" />
 
+  <!-- MailerLite Universal -->
+  <script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2474505');
+  </script>
+  <!-- End MailerLite Universal -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -454,30 +464,8 @@
           </div>
 
           <!-- ============================== SUBSCRIBE FORM ============================== -->
-          <aside id="collection-signup" class="signup-cta" aria-labelledby="collection-signup-heading" style="margin-top: clamp(56px, 7vh, 80px);">
-            <p class="signup-eyebrow">Join the notes</p>
-            <h3 class="signup-title" id="collection-signup-heading">Get the Starter Collection <em>by email.</em></h3>
-            <p class="signup-desc">Ten of these notes in one designed PDF, sent the moment you subscribe. Plus new notes when they land, no schedule, no filler.</p>
-
-            <form action="https://app.kit.com/forms/9612217/subscriptions"
-                  class="seva-form formkit-form"
-                  method="post"
-                  data-sv-form="9612217"
-                  data-uid="9d5255feda"
-                  data-format="inline"
-                  data-version="5">
-              <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-              <div class="formkit-fields" data-element="fields" data-stacked="false">
-                <div class="formkit-field">
-                  <input class="formkit-input" name="email_address" type="email" placeholder="Your email" aria-label="Email Address" required />
-                </div>
-                <button data-element="submit" class="formkit-submit" type="submit">
-                  <span>Send it to me</span>
-                </button>
-              </div>
-            </form>
-
-            <p class="signup-privacy">No spam. Leave any time.</p>
+          <aside id="collection-signup" class="signup-section" aria-label="Subscribe to the Starter Collection" style="margin-top: clamp(56px, 7vh, 80px);">
+            <div class="ml-embedded" data-form="8pN0KV"></div>
           </aside>
 
         </div>
@@ -594,9 +582,6 @@
       window.addEventListener('scroll', apply, { passive: true });
     })();
   </script>
-
-  <!-- Kit (ConvertKit) form script for the Starter Collection subscribe form -->
-  <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 
   <script defer src="assets/nav.js"></script>
 
