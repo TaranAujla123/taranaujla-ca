@@ -1534,7 +1534,6 @@ footer[role="contentinfo"] {
   outline: none !important;
 }
 
-.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button,
 .ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.primary {
   background-color: var(--sage) !important;
   color: var(--ink) !important;
@@ -1548,14 +1547,12 @@ footer[role="contentinfo"] {
   height: auto !important;
   width: auto !important;
   min-width: 180px;
-  display: inline-block !important;
   cursor: pointer;
   transition: background-color 160ms ease, transform 160ms ease;
 }
 .ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit {
   text-align: left !important;
 }
-.ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover,
 .ml-embedded #mlb2-43117860.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.primary:hover {
   background-color: var(--paper) !important;
   transform: translateY(-1px);
