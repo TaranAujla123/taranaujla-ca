@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Built to Stand. A blueprint for weathering any storm. The inner work that made the rebuild possible, in the order it actually had to be built." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Taran Aujla" />
+
+  <title>The Blueprint — Taran Aujla</title>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Blueprint — Built to Stand" />
+  <meta property="og:description" content="The inner work that made the rebuild possible, in the order it actually had to be built." />
+  <meta property="og:url" content="https://taranaujla.ca/blueprint/" />
+  <meta property="og:site_name" content="Taran Aujla" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:image" content="https://taranaujla.ca/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Taran Aujla" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Blueprint — Built to Stand" />
+  <meta name="twitter:description" content="The inner work that made the rebuild possible, in the order it actually had to be built." />
+  <meta name="twitter:image" content="https://taranaujla.ca/assets/og.jpg" />
+
+  <link rel="canonical" href="https://taranaujla.ca/blueprint/" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@300..600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles.css?v=1.1.6" />
+
+  <!-- MailerLite Universal -->
+  <script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2474505');
+  </script>
+  <!-- End MailerLite Universal -->
+
+  <style>
+    :root { --article-max: 660px; --article-pad: clamp(20px, 5vw, 56px); }
+    .article-shell { padding: clamp(48px, 8vh, 96px) var(--article-pad) clamp(96px, 14vh, 160px); max-width: 1080px; margin: 0 auto; }
+    .article-header { max-width: var(--article-max); margin: 0 auto clamp(48px, 7vh, 80px); }
+    .article-back { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; color: var(--paper-muted); margin-bottom: 56px; transition: color 160ms ease, gap 180ms ease; }
+    .article-back:hover { color: var(--paper); gap: 14px; }
+    .article-back::before { content: "←"; color: var(--sage); font-style: italic; font-size: 14px; }
+    .article-eyebrow { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 500; color: var(--sage); margin: 0 0 28px; display: inline-flex; align-items: center; gap: 14px; }
+    .article-eyebrow::before { content: ""; display: inline-block; width: 32px; height: 1px; background: var(--sage); }
+    .article-title { font-family: var(--font-serif); font-weight: 400; font-size: clamp(40px, 6vw, 68px); line-height: 1.05; letter-spacing: -0.024em; color: var(--paper); margin: 0 0 24px; max-width: 14ch; }
+    .article-title em { font-style: italic; color: var(--sage); font-weight: 400; }
+    .article-subtitle { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: clamp(20px, 2.1vw, 24px); line-height: 1.45; color: var(--paper-muted); margin: 0; max-width: 36ch; }
+
+    .blueprint-body { max-width: var(--article-max); margin: 0 auto; }
+    .blueprint-lede { font-family: var(--font-serif); font-size: clamp(20px, 1.6vw, 23px); line-height: 1.65; color: var(--paper); margin: 0 0 2.4em; font-weight: 400; }
+    .blueprint-prose { font-family: var(--font-serif); font-size: clamp(18px, 1.45vw, 20px); line-height: 1.75; color: rgba(244, 241, 234, 0.92); margin: 0 0 1.6em; }
+    .blueprint-prose:last-of-type { margin-bottom: 3.4em; }
+
+    .parts-heading { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 500; color: var(--sage); margin: 3.4em 0 2em; display: inline-flex; align-items: center; gap: 14px; }
+    .parts-heading::before { content: ""; display: inline-block; width: 32px; height: 1px; background: var(--sage); }
+    .parts-intro { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: clamp(17px, 1.4vw, 19px); line-height: 1.6; color: var(--paper-muted); margin: 0 0 2.4em; }
+
+    .part { margin: 0 0 2.6em; padding-bottom: 2.6em; border-bottom: 1px solid var(--paper-hairline); }
+    .part:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+    .part-num { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600; color: var(--sage); margin: 0 0 10px; }
+    .part-title { font-family: var(--font-serif); font-weight: 400; font-size: clamp(24px, 2.8vw, 30px); line-height: 1.18; letter-spacing: -0.012em; color: var(--paper); margin: 0 0 6px; }
+    .part-title em { font-style: italic; }
+    .part-sub { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: clamp(17px, 1.4vw, 19px); line-height: 1.5; color: var(--sage-soft); margin: 0 0 14px; }
+    .part-body { font-family: var(--font-serif); font-weight: 400; font-size: clamp(16px, 1.35vw, 18px); line-height: 1.65; color: rgba(244, 241, 234, 0.86); margin: 0; }
+
+    .blueprint-signup { margin-top: clamp(64px, 9vh, 96px); padding-top: clamp(48px, 7vh, 80px); border-top: 1px solid var(--paper-hairline); max-width: var(--article-max); margin-left: auto; margin-right: auto; }
+    .blueprint-signup-head { margin-bottom: clamp(32px, 4vh, 44px); }
+    .blueprint-signup-head h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.15; letter-spacing: -0.018em; color: var(--paper); margin: 0 0 18px; max-width: 22ch; }
+    .blueprint-signup-head h2 em { color: var(--sage); font-style: italic; font-weight: 400; }
+    .blueprint-signup-head p { font-family: var(--font-serif); font-weight: 400; font-size: clamp(17px, 1.45vw, 19px); line-height: 1.7; color: var(--paper-muted); margin: 0; max-width: 52ch; }
+
+    .article-end { max-width: var(--article-max); margin: clamp(64px, 10vh, 120px) auto 0; padding-top: 48px; border-top: 1px solid var(--paper-hairline); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
+    .article-end-mark { width: 44px; height: 44px; color: var(--sage); }
+    .article-end-actions { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+    .article-end-actions a { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; color: var(--paper-muted); transition: color 160ms ease, gap 160ms ease; display: inline-flex; align-items: center; gap: 10px; }
+    .article-end-actions a:hover { color: var(--paper); }
+    .article-end-actions a.is-home::before { content: "←"; color: var(--sage); font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <a href="#blueprint-content" class="skip-link">Skip to main content</a>
+
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <a href="../" class="brand" aria-label="Taran Aujla — home">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter" aria-hidden="true">
+          <path d="M 14 16 L 50 16" /><path d="M 25 16 L 25 48" /><path d="M 32 16 L 32 50" /><path d="M 39 16 L 39 48" />
+        </svg>
+        <span class="brand-wordmark">Taran <em>Aujla</em></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../rebuild/index.html">The Rebuild</a></li>
+          <li><a href="../index.html#off-curriculum">Off-Curriculum</a></li>
+          <li><a href="../blueprint/index.html">The Blueprint</a></li>
+          <li class="nav-hide-sm"><a href="../index.html#connect">Connect</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="blueprint-content">
+    <article class="article-shell">
+
+      <header class="article-header">
+        <a href="../index.html" class="article-back">Home</a>
+        <p class="article-eyebrow">The Blueprint</p>
+        <h1 class="article-title">Built to <em>Stand.</em></h1>
+        <p class="article-subtitle">A blueprint for weathering any storm.</p>
+      </header>
+
+      <div class="blueprint-body">
+
+        <p class="blueprint-lede">This document is the rebuild. The inner work that made the rebuild possible, in the order it actually had to be built. Mind first. Body second. Life third. That order is not a slogan, and reversing it is why most people try to change something about themselves and end up exactly where they started six months later.</p>
+
+        <p class="blueprint-prose">Most of what got me through the years that broke me down is in here. Not the highlights...the actual practices. The ones I came across, tested in my own life, and kept because they held.</p>
+
+        <p class="blueprint-prose">Forty-seven pages. Seven parts. Each one builds on the last. Read it once and put it down if it does not speak to you. Read it slowly if it does. Come back to specific sections when the weather actually gets bad.</p>
+
+        <p class="parts-heading">See what's inside</p>
+        <p class="parts-intro">Seven parts. Each one builds on the last.</p>
+
+        <div class="part">
+          <p class="part-num">Part I</p>
+          <h3 class="part-title">The <em>Foundation.</em></h3>
+          <p class="part-sub">What holds when everything else moves.</p>
+          <p class="part-body">The five principles underneath any steady inner state, and the difference between quiet steadiness and the performed version that collapses under pressure.</p>
+        </div>
+
+        <div class="part">
+          <p class="part-num">Part II</p>
+          <h3 class="part-title">The <em>Mind.</em></h3>
+          <p class="part-sub">The operating system underneath.</p>
+          <p class="part-body">Eight Stoic practices for the inner life that cannot be shaken. The dichotomy of control, premeditation of adversity, the observer position, memento mori, the identity floor.</p>
+        </div>
+
+        <div class="part">
+          <p class="part-num">Part III</p>
+          <h3 class="part-title">The <em>Practices.</em></h3>
+          <p class="part-sub">Building the foundation.</p>
+          <p class="part-body">Eight daily disciplines that produce a different man within months. Cold, breath, voluntary discomfort, meditation, physical training, Stoic reading, the morning, the journal.</p>
+        </div>
+
+        <div class="part">
+          <p class="part-num">Part IV</p>
+          <h3 class="part-title">When the Storm <em>Hits.</em></h3>
+          <p class="part-sub">How the trained man responds.</p>
+          <p class="part-body">Nine field-tested moves for moments when pressure is highest. Silence under attack, the neutral face, the first five seconds, crisis composure, recovery from a visible mistake.</p>
+        </div>
+
+        <div class="part">
+          <p class="part-num">Part V</p>
+          <h3 class="part-title">The People Who <em>Test You.</em></h3>
+          <p class="part-sub">Specific kinds of weather.</p>
+          <p class="part-body">Eight difficult patterns and how to stay grounded with each. The boss, the aggressive negotiator, the bully, the narcissist, the cynic, the mocker, the manipulator, the high-status condescender.</p>
+        </div>
+
+        <div class="part">
+          <p class="part-num">Part VI</p>
+          <h3 class="part-title">What Holds <em>Long-Term.</em></h3>
+          <p class="part-sub">The sources that last decades.</p>
+          <p class="part-body">Six durable foundations that hold up under any weather. Earned skill, daily work, character, philosophy. Plus the fragile sources you should stop building on.</p>
+        </div>
+
+        <div class="part">
+          <p class="part-num">Part VII</p>
+          <h3 class="part-title">The Daily <em>Architecture.</em></h3>
+          <p class="part-sub">How the practice lives in a life.</p>
+          <p class="part-body">Six structures that integrate the work into how you live. The morning protocol, the pre-pressure routine, the 24-hour discipline, end-of-day reflection, the year, the decade.</p>
+        </div>
+
+      </div>
+
+      <aside class="blueprint-signup" aria-label="Get the Blueprint">
+        <div class="blueprint-signup-head">
+          <h2>Get <em>the Blueprint.</em></h2>
+          <p>Leave your email and the PDF lands in your inbox once you confirm. You will also get new notes when they are ready. Unsubscribe at any time.</p>
+        </div>
+        <div class="ml-embedded" data-form="8pN0KV"></div>
+      </aside>
+
+      <div class="article-end">
+        <svg class="article-end-mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter" aria-hidden="true">
+          <path d="M 14 16 L 50 16" /><path d="M 25 16 L 25 48" /><path d="M 32 16 L 32 50" /><path d="M 39 16 L 39 48" />
+        </svg>
+        <div class="article-end-actions">
+          <a href="../index.html#off-curriculum" class="is-home">Off-Curriculum</a>
+          <a href="../index.html">Home</a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand-block">
+        <svg class="footer-mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter" aria-hidden="true">
+          <path d="M 14 16 L 50 16" /><path d="M 25 16 L 25 48" /><path d="M 32 16 L 32 50" /><path d="M 39 16 L 39 48" />
+        </svg>
+        <div>
+          <p class="footer-brand">Taran <em>Aujla</em></p>
+          <p class="footer-tag">Personal site &middot; Ontario, Canada</p>
+        </div>
+      </div>
+      <p class="footer-meta">&copy; 2026 <strong>Taran Aujla</strong> &middot; All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var bar = document.querySelector('.topbar');
+      if (!bar) return;
+      var apply = function(){ if (window.scrollY > 24) { bar.classList.add('is-scrolled'); } else { bar.classList.remove('is-scrolled'); } };
+      apply();
+      window.addEventListener('scroll', apply, { passive: true });
+    })();
+  </script>
+
+  <script defer src="../assets/nav.js"></script>
+
+</body>
+</html>
