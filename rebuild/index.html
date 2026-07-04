@@ -783,7 +783,25 @@
       border-top: 1px solid var(--paper-hairline);
     }
 
+
+    .rebuild-overview { max-width: var(--article-max); margin: clamp(48px, 6vh, 72px) auto clamp(32px, 4vh, 48px); }
+    .rebuild-overview p { font-family: var(--font-serif); font-size: clamp(18px, 1.55vw, 21px); line-height: 1.65; color: var(--paper); margin: 0 0 1.2em; }
+    .rebuild-overview p:last-child { margin-bottom: 0; color: var(--paper-muted); font-style: italic; }
+
+    .rebuild-signup { max-width: var(--article-max); margin: clamp(48px, 7vh, 72px) auto 0; padding-top: clamp(40px, 5vh, 56px); border-top: 1px solid var(--paper-hairline); }
+    .rebuild-signup-fineprint { font-family: var(--font-sans); font-size: 13px; line-height: 1.55; color: var(--paper-faint); margin: 22px 0 0; letter-spacing: 0.01em; }
+
   </style>
+
+  <!-- MailerLite Universal -->
+  <script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2474505');
+  </script>
+  <!-- End MailerLite Universal -->
 </head>
 <body>
 
@@ -841,20 +859,59 @@
       <!-- ============== Body ============== -->
       <div class="article-body">
 
-        <!-- ============== The rebuild, in numbers (hero block) ============== -->
+        <!-- ============== Intro paragraph (hook) ============== -->
+        <p class="lede">For years I ran at full speed on the only script I knew. From the outside everything tracked, but inside, something was off. On January 20, 2025, I stopped, pressed a hard reset, and rebuilt from the ground up in silence. A year later, I&rsquo;d reached a baseline &mdash; physical and mental &mdash; I did not think was possible.</p>
+
+        <!-- ============== Before/After Slideshow ============== -->
+        <p class="slideshow-heading">The Rebuild &middot; 2025 to 2026</p>
+
+        <figure class="rebuild-slideshow" aria-label="The rebuild, January 2025 to spring 2026">
+          <div class="slideshow-track">
+            <div class="slide is-active is-composite">
+              <div class="slide-pair">
+                <img src="../assets/rebuild/slideshow/001.jpeg" alt="January 2025" loading="eager" />
+                <img src="../assets/rebuild/slideshow/002.jpeg" alt="January 2025" loading="eager" />
+              </div>
+              <p class="slide-caption">Then &middot; January 2025</p>
+            </div>
+            <div class="slide is-full">
+              <img src="../assets/rebuild/slideshow/01.jpg" alt="January 2025" loading="lazy" />
+              <p class="slide-caption">Then &middot; January 2025</p>
+            </div>
+            <div class="slide">
+              <img src="../assets/rebuild/slideshow/04.jpg" alt="Spring 2026" loading="lazy" />
+              <p class="slide-caption">Now &middot; Spring 2026</p>
+            </div>
+            <div class="slide">
+              <img src="../assets/rebuild/slideshow/tanktop.jpg" alt="Spring 2026" loading="lazy" />
+              <p class="slide-caption">Now &middot; Spring 2026</p>
+            </div>
+            <div class="slide">
+              <img src="../assets/rebuild/slideshow/07.jpg" alt="Spring 2026" loading="lazy" />
+              <p class="slide-caption">Now &middot; Spring 2026</p>
+            </div>
+            <div class="slide is-full">
+              <img src="../assets/rebuild/slideshow/12.jpg" alt="2025 to 2026 transformation" loading="lazy" />
+              <p class="slide-caption">2025&ndash;2026</p>
+            </div>
+
+            <button class="slide-nav slide-nav-prev" type="button" aria-label="Previous photo">&#8249;</button>
+            <button class="slide-nav slide-nav-next" type="button" aria-label="Next photo">&#8250;</button>
+          </div>
+
+          <div class="slide-dots" role="tablist" aria-label="Photo navigation">
+            <button class="slide-dot is-active" type="button" aria-label="Photo 1"></button>
+            <button class="slide-dot" type="button" aria-label="Photo 2"></button>
+            <button class="slide-dot" type="button" aria-label="Photo 3"></button>
+            <button class="slide-dot" type="button" aria-label="Photo 4"></button>
+            <button class="slide-dot" type="button" aria-label="Photo 5"></button>
+            <button class="slide-dot" type="button" aria-label="Photo 6"></button>
+          </div>
+        </figure>
+
+        <!-- ============== Medical Stats Table ============== -->
         <section class="rebuild-numbers" aria-label="The rebuild, in numbers">
-          <figure class="rebuild-inline-image rebuild-inline-image--top" aria-label="Before and after, January 2025 to May 2026">
-            <img src="../assets/rebuild/before-after-taran.jpg" alt="Taran before the rebuild and after, about 18 months apart" loading="eager" />
-            <figcaption>
-              Jan 2025 &ndash; May 2026
-              <em>And yes, it&rsquo;s the same person. About 1.5 years apart.</em>
-            </figcaption>
-          </figure>
           <p class="rebuild-numbers-eyebrow">Where I was. Where I am.</p>
-
-          <p class="rebuild-numbers-intro">For years I ran at full speed on the only script I knew. Degrees, work, goals, ambition, milestones, the relationships, the look of having it together. From the outside everything tracked. Inside, even with most of what the script said to chase, a quiet void had been there the whole time. The race wasn&rsquo;t mine. I&rsquo;d just never stopped long enough to ask.</p>
-
-          <p class="rebuild-numbers-intro">The body was the first place that started showing what that script had cost. Side by side, the numbers tell the story.</p>
 
           <div class="rebuild-comparison" role="table" aria-label="Medical numbers, January 2025 compared to Spring 2026">
             <header class="rebuild-comparison-header" role="row">
@@ -907,224 +964,20 @@
           </div>
 
           <p class="rebuild-numbers-coda">If you don&rsquo;t believe these numbers, I have the medical records to prove it. Connect directly with me.</p>
-
-          <p class="rebuild-numbers-bridge">The body did not change first. The mind did. The page below is what actually changed, and how.</p>
         </section>
 
-        <p class="lede">A rebuild doesn't begin with a decision. It begins with a recognition. Sometimes it arrives the hard way... a situation serious enough that we finally say, I can't keep doing this. Sometimes it arrives quietly... the slow awareness that no matter what we achieve, something still feels off. Recognition comes first. The decision is the second step, for those who choose it.</p>
-
-        <p class="section-marker">The pressure underneath</p>
-
-        <p>Men who are used to pressure can keep moving long after something underneath has stopped working. From the outside it looks like discipline. From the inside it feels like discipline. It isn&rsquo;t. It&rsquo;s not paying attention to what the discipline is costing.</p>
-
-        <p>I didn&rsquo;t quit. I didn&rsquo;t check out. I didn&rsquo;t put it on anyone else. I kept the work moving, kept the obligations, showed up at the level the situation needed and sometimes beyond. Years of training to carry pressure had done their job. The body and the mind absorbed the load and kept going.</p>
-
-        <p>What I hadn&rsquo;t learned yet: some pressure can&rsquo;t be outworked. The next milestone doesn&rsquo;t fix it. The willpower that handled every smaller version stops working when the version gets big enough. For a decade my strategy was: keep going. It wasn&rsquo;t working anymore.</p>
-
-        <hr class="section-break" />
-
-        <p class="section-marker">What the body was saying</p>
-
-        <figure class="rebuild-inline-image" aria-label="Medical data documenting the rebuild">
-          <img src="../assets/rebuild/medical-stats.jpg" alt="Lab reports and medication list documenting the rebuild" loading="lazy" />
-          <figcaption>
-            Jan 2025 &ndash; Sept 2025
-            <em>The body kept the receipts.</em>
-          </figcaption>
-        </figure>
-
-        <p>The numbers weren&rsquo;t a surprise. The body had been keeping track the whole time, sending warnings I&rsquo;d been overriding. Doctors had been telling me too, and I&rsquo;d stopped listening to most of them. That isn&rsquo;t weakness. It&rsquo;s what happens when a man has been pushing through warning signals for so long that he stops hearing them.</p>
-
-        <p>We cannot fix a problem we cannot see, and we cannot see what we are inside of.</p>
-
-        <hr class="section-break" />
-
-        <p class="section-marker">The Choice Point</p>
-
-        <p>A point came where I had to choose. Keep forcing forward and pretend the old approach still worked, or step back, regroup, and rebuild from the ground up.</p>
-
-        <p>Two paths. One was the way that had brought me this far. The other was uncharted ground...an admission that the runway had run out.</p>
-
-        <p>I made the call.</p>
-
-        <p>I called a hard reset. The reset was not surrender but the move you make when the current line has stopped working, so you can consolidate, repair, and come back from a stronger position. In any real military tradition, retreat in that sense is not failure. Sun Tzu wrote about it, and so did Marcus in the field, in his notebook to himself.</p>
-
-        <blockquote class="ghost-quote">
-          <span class="ghost-quote-text">The impediment to action advances action. What stands in the way becomes the way.</span>
-          <span class="ghost-quote-attr">Marcus Aurelius &middot; Meditations &middot; c. AD 170</span>
-        </blockquote>
-
-        <p>That sentence is not a Hallmark card but a working principle.</p>
-
-        <p>I stepped back from the noise. The pace, the pressure, the opinions, the constant input. I gave myself the silence the rebuild needed.</p>
-
-        <p>In that silence, what had been running me became visible. The habits I&rsquo;d stopped questioning. The reactions firing automatically. The crowd I&rsquo;d been following without asking where it was going. The script I&rsquo;d been running without checking who wrote it. The work wasn&rsquo;t easy. For the first time it had a direction.</p>
-
-        <hr class="section-break" />
-
-        <p class="section-marker">What was actually mine</p>
-
-        <p>Underneath, a second realization.</p>
-
-        <p>For years I had been investing too much in things outside of me. Career, status, income, the visible markers I had chased and, for a time, chased well. When they started to shift, I learned something I should have known all along. We can lose those things as fast as we build them. They were never as solid as they looked, and they were on loan the whole time.</p>
-
-        <p>So I asked the question. If the externals can vanish, what actually belongs to me?</p>
-
-        <p>The answer was short. Just two things: my mind and my body. These two (assets) had been mine the entire time. Everything outside me could be taken, but these could not. Whatever my age, whatever my condition, I am the one who decides what to do with them.</p>
-
-        <p>That is where I rebuilt from. I began investing heavily in my 2 assets.</p>
-
-        <hr class="section-break" />
-
-        <p class="section-marker">Mind first</p>
-
-        <p>The path forward wasn&rsquo;t managing the situation, accommodating it, or making peace with what had happened and carrying on. The path was a rebuild from the foundation. Mind first. The rest follows.</p>
-
-        <p>We cannot become a new self while still anchored to the old one. The work begins with subtraction.</p>
-
-        <p>The subtraction is real. We have to remove the noise around us: the opinions, the advice, the things, the constant input from every direction. More importantly, we have to be willing to drop the beliefs and assumptions we have been running on for years: the frameworks we did not choose, the stories about ourselves that are not really ours, the things we &ldquo;know.&rdquo; If something in our life feels off, the beliefs we have been running on are not going to be the ones that get us out of it. If they were, nothing would feel off in the first place.</p>
-
-        <blockquote class="ghost-quote">
-          <span class="ghost-quote-text">You cannot solve a problem with the same thinking that created it.</span>
-          <span class="ghost-quote-attr">Principle</span>
-        </blockquote>
-
-        <p>The mental rebuild was deep. I read everything I could find on how the mind works: the neuroscience, the cognitive frameworks, the contemplative traditions that had been pointing at the same thing for two thousand years. I sat in silence regularly, in the unromantic sense of just sitting still. I watched my thinking the way we watch weather. Not identifying with it. Just watching it pass. I learned to catch a pattern the moment it started firing, so I could choose differently before it completed. The voice running my life turned out not to be me. It was a script I&rsquo;d inherited and never examined. Once I could see it, I could change it.</p>
-
-        <p>The mental work was the work, and changing the mind was the only thing actually required.</p>
-
-        <p>This is not original. The Stoics named all of it two millennia ago. The contemplative traditions named it long before that. Most of us dismiss this kind of writing as soft, read it, claim to apply it, post it on social media, and never do the work. What is new each time is the man who reads it and lives it.</p>
-
-        <hr class="section-break" />
-
-        <p class="section-marker">Emotion out</p>
-
-        <p>One more move made daily execution possible. I took emotion out of the equation.</p>
-
-        <p>Not numbness. The deliberate decision to stop letting how I felt about anything drive what I did about it. The Stoics had a name for it, though they didn&rsquo;t call it robot mode. They called it operating with reason in command and emotion as information.</p>
-
-        <p>In practice it was simple. I did the task in front of me, regardless of how I felt, and stopped over-analyzing the possibilities.</p>
-
-        <p>I operated like a &ldquo;machine,&rdquo; executing on what the situation required. I was not suppressing anything. The part of me that wanted to negotiate with the work had been outvoted by the part that knew what had to happen.</p>
-
-        <hr class="section-break" />
-
-        <p class="section-marker">Acting as him</p>
-
-        <p>Here is the move most people do not make.</p>
-
-        <p>We can do all the inside work: the reading, the sitting still, watching ourselves think. But there is a moment in the rebuild where the work stops being preparation and starts being identity. That moment does not happen because we feel ready. It happens because we decide.</p>
-
-        <p>I made the decision. The fit, healthy, sharp version of me would be the version I acted from, starting now. I acted as him before I felt like him, before I looked like him, before any of the proof had shown up.</p>
-
-        <p>That&rsquo;s the move most men miss. They&rsquo;re waiting until they feel like the version of themselves they want to become. That version doesn&rsquo;t exist yet. It won&rsquo;t exist until they start acting as if it does. The man is built by the acting. He doesn&rsquo;t show up first.</p>
-
-        <p>I stopped checking the scale. I stopped comparing, competing with others, I stopped going around the hard parts and started walking straight through them. I gave myself a system, complied with it, and let the proof show up on its own time.</p>
-
-        <hr class="section-break" />
-
-        <p class="section-marker">The version that came back</p>
-
-        <p>The version of me that came out of that rebuild lives differently than the one that called the reset.</p>
-
-        <p>I lost seventy pounds in under a year. I came off the medications, one by one, my doctors confirmed it. The blood markers normalized. None of it came from one decision. It came from a thousand small ones, taken every day, in the cold of morning and the weight of evening, when I felt like it and when I didn&rsquo;t. I built a baseline I hadn&rsquo;t had in twenty years. Probably never had quite like this.</p>
-
-        <p>None of that came from becoming a fitness obsessive. I am not a man who counts calories, lives in the gym, or runs his life around a strict diet. That was never the point.</p>
-
-        <p>What moved things was quieter. I cleared the noise. I subtracted the stressors I was carrying that did not need to be there. I made decisions that lined up with where I was trying to go, and acted on them deliberately, not frantically. No chasing the next thing, no competing with anyone, no measuring myself against people running a different race. Just steady, paced, daily action, and a mind kept under control instead of left to wander wherever it wanted. The body followed the mind. It usually does.</p>
-
-        <blockquote class="ghost-quote">
-          <span class="ghost-quote-text">Who you become is built in the days, one at a time. Stay focused. Quiet the noise. Move with intention.</span>
-          <span class="ghost-quote-attr">Principle</span>
-        </blockquote>
-
-        <p>The work is sharper now, the judgment is steadier, and the grip on outcomes has loosened. I take daily action that lines up with where I am going. I do the work for the work, and I let the results land where they land. In real estate, where stakes are high and emotions tend to run the room, that is not a small thing. The way I show up now is built for the long game, with the patience for results that build over time rather than results that arrive on Monday. It stays steady on what I can control, and stays ready for the next round of pressure when it comes.</p>
-
-        <p>Outside of the practice, I keep returning to the mind: how it works, how it produces what it produces, how it runs a life until we notice it running, how everything else (the body, the work, the relationships, the trajectory) flows downstream of it. That study is now a daily practice.</p>
-
-        <p>I train, I run, I learn. I question things and take nothing on face value. I read old books, and I sit still. The training is part of how I live now, maintenance more than mission, and it was never the thing that got me here. The mind set the direction first, and the right choices followed from that, this one among them. I have two dogs of my own. They have shown me what loyalty, compassion, and being real look like.</p>
-
-        <hr class="section-break" />
-
-        <p class="section-marker">Why I am writing this down</p>
-
-        <p>The reason I am writing this down is not to tell anyone what to do.</p>
-
-        <p>There is no shortage of people on the internet ready to tell us how they turned their life around and how we could do the same if we would just buy what they are selling. I am not selling anything here.</p>
-
-        <p>I am writing this down because there are men who look fine from the outside and know privately that something is off. They are still performing, still providing, still showing up. They are also tired, reactive, and running on pressure while calling it discipline. From the outside, the trajectory still looks plausible. Inside, the man knows.</p>
-
-        <p>I understand that man because I was him.</p>
-
-        <p>The man I was, deep in that stretch, couldn&rsquo;t have read this from a stranger and believed it. He&rsquo;d heard a hundred versions of the same advice. They&rsquo;d all bounced off. What he would have needed to read, if anyone could have written it for him, was this. The people who get to the other side of a stretch like that aren&rsquo;t the ones who finally found the right technique. They&rsquo;re the ones who, tested past what felt manageable, made a no-BS call to reset, restart, rebuild, and re-engage from a stronger position.</p>
-
-        <p>If your life feels like chaos right now, if you have been pushing too hard for too long and nothing seems to be aligning, if you have started quietly accepting where you are because the alternative feels too far away to imagine, hear this: I have been there, and I know that stretch from the inside.</p>
-
-        <p>Here is what I learned that no one had told me. The setbacks turned out to be the path itself. The chaos was the test. The question it asks is whether we will push through it despite everything around us saying we should stop.</p>
-
-        <p>If we sincerely do, we will see through it, not by gritting our teeth but by doing the actual work this story describes. Mind first. The subtraction. The decision to act as the version we are trying to become, before the proof has shown up. One day at a time, until the days add up.</p>
-
-        <p>That is the promise. And the only thing I am here to say.</p>
-
-        <p class="slideshow-heading">The Rebuild &middot; 2025 to 2026</p>
-
-        <figure class="rebuild-slideshow" aria-label="The rebuild, January 2025 to spring 2026">
-          <div class="slideshow-track">
-            <div class="slide is-active is-composite">
-              <div class="slide-pair">
-                <img src="../assets/rebuild/slideshow/001.jpeg" alt="January 2025" loading="lazy" />
-                <img src="../assets/rebuild/slideshow/002.jpeg" alt="January 2025" loading="lazy" />
-              </div>
-              <p class="slide-caption">Then &middot; January 2025</p>
-            </div>
-            <div class="slide is-full">
-              <img src="../assets/rebuild/slideshow/01.jpg" alt="January 2025" loading="lazy" />
-              <p class="slide-caption">Then &middot; January 2025</p>
-            </div>
-            <div class="slide">
-              <img src="../assets/rebuild/slideshow/04.jpg" alt="Spring 2026" loading="lazy" />
-              <p class="slide-caption">Now &middot; Spring 2026</p>
-            </div>
-            <div class="slide">
-              <img src="../assets/rebuild/slideshow/tanktop.jpg" alt="Spring 2026" loading="lazy" />
-              <p class="slide-caption">Now &middot; Spring 2026</p>
-            </div>
-            <div class="slide">
-              <img src="../assets/rebuild/slideshow/07.jpg" alt="Spring 2026" loading="lazy" />
-              <p class="slide-caption">Now &middot; Spring 2026</p>
-            </div>
-            <div class="slide is-full">
-              <img src="../assets/rebuild/slideshow/12.jpg" alt="2025 to 2026 transformation" loading="lazy" />
-              <p class="slide-caption">2025&ndash;2026</p>
-            </div>
-
-            <button class="slide-nav slide-nav-prev" type="button" aria-label="Previous photo">&#8249;</button>
-            <button class="slide-nav slide-nav-next" type="button" aria-label="Next photo">&#8250;</button>
-          </div>
-
-          <div class="slide-dots" role="tablist" aria-label="Photo navigation">
-            <button class="slide-dot is-active" type="button" aria-label="Photo 1"></button>
-            <button class="slide-dot" type="button" aria-label="Photo 2"></button>
-            <button class="slide-dot" type="button" aria-label="Photo 3"></button>
-            <button class="slide-dot" type="button" aria-label="Photo 4"></button>
-            <button class="slide-dot" type="button" aria-label="Photo 5"></button>
-            <button class="slide-dot" type="button" aria-label="Photo 6"></button>
-          </div>
-        </figure>
-
-        <div class="closing-emphasis">
-          <p>The obstacles were the curriculum, not the interruption to it.</p>
-          <p><em>There's no way around it. The only way is through it.</em></p>
+        <!-- ============== Brief Overview ============== -->
+        <div class="rebuild-overview">
+          <p>The pictures show what changed on the outside. The numbers show what changed underneath.</p>
+          <p>What actually shifted &mdash; how the mind, the patterns, the daily practice all rebuilt over eighteen months &mdash; is the story I&rsquo;ve written down.</p>
+          <p>If it&rsquo;s useful to you, it&rsquo;s yours to read.</p>
         </div>
 
-        <p>What it took was the decision made once and held every day after.</p>
-
-        <blockquote class="ghost-quote">
-          <span class="ghost-quote-text">One day at a time.</span>
-          <span class="ghost-quote-attr">Daily practice</span>
-        </blockquote>
-
-        <p class="article-signoff">Taran</p>
+        <!-- ============== Signup Form ============== -->
+        <aside class="rebuild-signup" aria-label="Get the full story">
+          <div class="ml-embedded" data-form="X80qff"></div>
+          <p class="rebuild-signup-fineprint">The full story, in one PDF. Yours when you subscribe.</p>
+        </aside>
 
       </div>
 
